@@ -70,16 +70,20 @@ function RepoList(props) {
   const handleChange = (event) => {};
 
   return (
-    <Grid container spacing={1} justify="space-between">
-      <Grid item xs={12} md={6}>
-        <TextField
-          id="outlined-basic"
-          label="Find a repository.."
-          variant="outlined"
-          fullWidth
-          onChange={filterByName}
-          size="small"
-        />
+    <Grid container spacing={1} direction="row-reverse" justify="space-between">
+      <Grid item xs={12} md={1} className={classes.buttonAlign}>
+        <Button
+          variant="contained"
+          style={{
+            backgroundColor: "#2ea44f",
+          }}
+          color="primary"
+          size="medium"
+          startIcon={<RepoIcon />}
+          className={classes.fullHeight}
+        >
+          NEW
+        </Button>
       </Grid>
       <Grid item xs={12} md={4}>
         <Grid container spacing={1}>
@@ -159,20 +163,17 @@ function RepoList(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} md={1} className={classes.buttonAlign}>
-        <Button
-          variant="contained"
-          style={{
-            backgroundColor: "#2ea44f",
-          }}
-          color="primary"
-          size="medium"
-          startIcon={<RepoIcon />}
-          className={classes.fullHeight}
-        >
-          NEW
-        </Button>
+      <Grid item xs={12} md={6}>
+        <TextField
+          id="outlined-basic"
+          label="Find a repository.."
+          variant="outlined"
+          fullWidth
+          onChange={filterByName}
+          size="small"
+        />
       </Grid>
+      
       <Grid item xs={12}>
         <Divider />
       </Grid>

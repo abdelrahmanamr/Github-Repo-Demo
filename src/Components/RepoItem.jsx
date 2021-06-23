@@ -55,23 +55,27 @@ export default function RepoItem(props) {
             </Typography>
           </Grid>
           <TimelineDot className={classes.brown}/>
-          <Grid item xs={2}>
+          <Grid item xs={4}>
           
             <Typography gutterBottom variant="caption">
             {props.repo.language}
             </Typography>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={6}>
             <Typography gutterBottom variant="caption">
             Updated on {moment(props.repo.created_at).format("MMM DD, YYYY")}
             </Typography>
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={6} className={classes.buttonAlignment}>
+      <Grid item xs={6}>
+      <Grid container spacing={1}>
+      <Grid item xs={12} className={classes.buttonAlignment}>
         <Button variant="outlined" size="small" startIcon={<StarIcon />}>
           Star
         </Button>
+        </Grid>
+      </Grid>
       </Grid>
       <Grid item xs={12}>
           <Divider/>
