@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { TextField, Grid, Button, Divider,Box } from "@material-ui/core";
+import { TextField, Grid, Button, Divider} from "@material-ui/core";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
@@ -9,7 +9,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { getRepo, updateRepo } from "../store/actions/repoActions";
 import Result from "./Result";
-import { Typography } from "@material-ui/core";
+import SearchingInfo from "./SearchingInfo";
+
 const useStyles = makeStyles((theme) => ({
   fullWidth: {
     width: "100%",
@@ -28,28 +29,12 @@ const useStyles = makeStyles((theme) => ({
   filterAlign: {
     textAlign: "center",
   },
+  closeButtonColor: {
+    color: "#586069",
+  },
 }));
 
-function SearchingInfo(props) {
-  const isSearching = props.isSearching;
-  console.log("da5al fel search info")
-  console.log(props)
-  if (isSearching) {
-    return(
-    <Grid item xs={12}>
-      <Typography gutterBottom>
-      <Box fontWeight={700} display='inline'>{props.listSize} </Box>
-      results for repositories matching <Box fontWeight={700} display='inline'>{props.searchingValue}</Box>
-      </Typography>
-      <Divider/>
-    </Grid>
-    
-    );
-  }
-  else{
-    return null;
-  }
-}
+
 
 function RepoList(props) {
   const classes = useStyles();
@@ -63,10 +48,9 @@ function RepoList(props) {
   var [listSize, setListSize] = React.useState(0);
   console.log("value of initial data");
   console.log(initialData);
-  
 
   const filterByName = (event) => {
-    setSearchingValue(event.target.value)
+    setSearchingValue(event.target.value);
     console.log(event.target.value);
     var list = initialData;
     if (event.target.value === "") {
@@ -80,7 +64,6 @@ function RepoList(props) {
       );
       props.updateRepo(list);
       setListSize(list.length);
-      
     }
   };
 
@@ -193,7 +176,11 @@ function RepoList(props) {
       <Grid item xs={12}>
         <Divider />
       </Grid>
-      <SearchingInfo isSearching={searching} searchingValue={searchingValue} listSize={listSize} />
+      <SearchingInfo
+        isSearching={searching}
+        searchingValue={searchingValue}
+        listSize={listSize}
+      />
       <Grid item xs={12}>
         <Result reposList={repos} />
       </Grid>
