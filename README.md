@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Short Description:
 
-This is project main is to display repositories of certain user where a search functionality is available for the name of the repo. Thus, user will be able to search for a repository with its name. The application is created using ReactJS and the data used is fetched from the Github api.
+This is a project to display repositories of a certain user where a search functionality is available for the name of the repo. Thus, user will be able to search for a repository with its name. The application is created using ReactJS and the data used is fetched from the Github api.
 
 ## Available Scripts
 
