@@ -8,12 +8,14 @@ import theme from './theme/index'
 
 const hist = createBrowserHistory();
 
+
+
 function App() {
   return (
       <MuiThemeProvider theme={theme}>
       <Router history={hist}>
         <Switch>
-          <Route path="/repo" component={Repo} />
+          <Route path="/" component={Repo} />
           {/* add routes here */}
         </Switch>
       </Router>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { Paper, Grid, Typography, Box, Divider } from "@material-ui/core";
+import { Paper, Grid, Divider } from "@material-ui/core";
 import PersonalInfo from "../Components/PersonalInfo";
 import SimpleTabs from "../Components/SimpleTabs";
 import RepoList from "../Components/RepoList";

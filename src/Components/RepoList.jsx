@@ -55,6 +55,7 @@ function RepoList(props) {
   const classes = useStyles();
   useEffect(() => {
     props.getOrders();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const { repos, initialData } = props;
   var [searchingValue, setSearchingValue] = React.useState("");

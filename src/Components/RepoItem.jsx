@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid, Link, Button, Divider } from "@material-ui/core";
 import { StarIcon } from "@primer/octicons-react";
@@ -29,7 +29,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function RepoItem(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
 
   const preventDefault = (event) => event.preventDefault();
 
